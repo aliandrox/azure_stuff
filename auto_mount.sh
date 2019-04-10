@@ -10,4 +10,4 @@ sudo mkdir -p /data/boomi && sudo mkdir /data/files && sudo mkdir /data/export &
 # $5 - username
 
 sudo mkdir $4
-sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=$2,dir_mode=0755,file_mode=0664
+sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,sec=ntlmssp
