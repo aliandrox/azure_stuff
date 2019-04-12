@@ -13,3 +13,9 @@ else
 fi
 
 sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,sec=ntlmssp
+
+sudo mkdir /opt/boomi
+sudo mkdir /opt/boomi/local
+sudo chmod -R 777 /opt/boomi/
+sudo chmod -R 777 /opt/boomi/local
+sudo chmod -R 777 /tmp
