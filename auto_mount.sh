@@ -26,4 +26,4 @@ sudo tar -C /opt/java-jdk -zxf ~/jdk-8u211-linux-x64.tar.gz
 sudo update-alternatives --install /usr/bin/java java /opt/java-jdk/jdk1.8.0_211/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /opt/java-jdk/jdk1.8.0_211/bin/javac 1
 
-export INSTALL4J_JAVA_HOME=/opt/sslexplorer/jre
+export INSTALL4J_JAVA_HOME=/opt/java-jdk/jdk1.8.0_211/jre
