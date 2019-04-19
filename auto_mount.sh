@@ -12,7 +12,7 @@ else
     sudo mkdir -p /data/boomi && sudo mkdir /data/files && sudo mkdir /data/export && sudo chmod 777 /data && sudo chmod 777 /data/boomi && sudo chmod 777 /data/files && sudo chmod 777 /data/export
 fi
 
-sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,sec=ntlmssp
+sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o nofail,vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,serverino,cache=strict
 
 sudo mkdir /opt/boomi
 sudo mkdir /opt/boomi/local
