@@ -28,3 +28,5 @@ sudo update-alternatives --install /usr/bin/javac javac /opt/java-jdk/jdk1.8.0_2
 
 export INSTALL4J_JAVA_HOME=/opt/java-jdk/jdk1.8.0_211/jre
 sudo rm /home/docker/jdk-8u211-linux-x64.tar.gz
+
+sudo /data/boomi/bin/atom start
