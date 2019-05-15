@@ -7,12 +7,24 @@
 
 if [ -d "/data" ] 
 then
-    sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,sec=ntlmssp
 else
     sudo mkdir -p /data/boomi && sudo mkdir /data/files && sudo mkdir /data/export && sudo chmod 777 /data && sudo chmod 777 /data/boomi && sudo chmod 777 /data/files && sudo chmod 777 /data/export
 fi
 
 sudo mount -t cifs //$1.file.core.windows.net/$3 $4 -o nofail,vers=3.0,username=$1,password=$2,dir_mode=0777,file_mode=0777,serverino,cache=strict
+
+if [ ! -d "/etc/smbcredentials" ]; then
+sudo mkdir /etc/smbcredentials
+fi
+if [ ! -f "/etc/smbcredentials/$1.cred" ]; then
+    sudo bash -c 'echo "username= $1" >> /etc/smbcredentials/$1.cred'
+    sudo bash -c 'echo "password=$2" >> /etc/smbcredentials/$1.cred'
+fi
+sudo chmod 600 /etc/smbcredentials/$1.cred
+
+sudo bash -c 'echo "//$1.file.core.windows.net/$3 $4 cifs nofail,vers=3.0,credentials=/etc/smbcredentials/$1.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+
+sudo mount -a
 
 sudo mkdir /opt/boomi
 sudo mkdir /opt/boomi/local
