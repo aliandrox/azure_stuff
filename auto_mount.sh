@@ -7,7 +7,7 @@
 
 if [ -d "/data" ] 
 then
-
+  echo "good"
 else
     sudo mkdir -p /data/boomi && sudo mkdir /data/files && sudo mkdir /data/export && sudo chmod 777 /data && sudo chmod 777 /data/boomi && sudo chmod 777 /data/files && sudo chmod 777 /data/export
 fi
