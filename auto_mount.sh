@@ -5,6 +5,8 @@
 # $4 = mountpoint path
 # $5 - username
 
+sudo su
+
 if [ -d "/data" ] 
 then
   echo "good"
@@ -19,6 +21,9 @@ if [ ! -f "/etc/smbcredentials/$1.cred" ]; then
     sudo bash -c 'echo "username= $1" >> /etc/smbcredentials/$1.cred'
     sudo bash -c 'echo "password=$2" >> /etc/smbcredentials/$1.cred'
 fi
+
+
+
 sudo chmod 600 /etc/smbcredentials/$1.cred
 
 sudo bash -c 'echo "//$1.file.core.windows.net/$3 $4 cifs nofail,vers=3.0,credentials=/etc/smbcredentials/$1.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
