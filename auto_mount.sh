@@ -18,8 +18,8 @@ if [ ! -d "/etc/smbcredentials" ]; then
 sudo mkdir /etc/smbcredentials
 fi
 if [ ! -f "/etc/smbcredentials/$1.cred" ]; then
-    sudo bash -c 'echo "username= $1" >> /etc/smbcredentials/'$1'.cred'
-    sudo bash -c 'echo "password=$2" >> /etc/smbcredentials/'$1'.cred'
+    sudo bash -c 'echo "username='$1'" >> /etc/smbcredentials/'$1'.cred'
+    sudo bash -c 'echo "password='$2'" >> /etc/smbcredentials/'$1'.cred'
 fi
 
 
