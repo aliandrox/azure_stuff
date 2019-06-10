@@ -46,9 +46,14 @@ if [ -d "/data/boomi/lib" ]
 then
     sudo cp /data/container-launcher.jar /data/boomi/lib/container-launcher.jar
 else
-  echo "do nothing"
+  echo "Boomi not installed, do nothing"
 fi
 sudo bash -c 'echo "fs.file-max = 1048576" >> /etc/sysctl.conf'
 sudo sysctl -p
 
-sudo /data/boomi/bin/atom start
+if [ -d "/data/boomi/bin" ] 
+then
+    sudo /data/boomi/bin/atom start
+else
+  echo "Boomi not installed, do nothing"
+fi
