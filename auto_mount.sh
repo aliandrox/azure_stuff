@@ -13,7 +13,7 @@ else
 fi
 
 if [ ! -d "/etc/smbcredentials" ]; then
-sudo mkdir /etc/smbcredentials
+sudo mkdir -p /etc/smbcredentials
 fi
 if [ ! -f "/etc/smbcredentials/$1.cred" ]; then
     sudo bash -c 'echo "username='$1'" >> /etc/smbcredentials/'$1'.cred'
@@ -28,14 +28,14 @@ sudo bash -c 'echo "//'$1'.file.core.windows.net/'$3' '$4' cifs nofail,vers=3.0,
 
 sudo mount -a
 
-sudo mkdir /opt/boomi
-sudo mkdir /opt/boomi/local
+sudo mkdir -p /opt/boomi
+sudo mkdir -p /opt/boomi/local
 sudo chmod -R 777 /opt/boomi/
 sudo chmod -R 777 /opt/boomi/local
 sudo chmod -R 777 /tmp
 
 sudo cp /data/jdk-8u211-linux-x64.tar.gz /home/docker/jdk-8u211-linux-x64.tar.gz
-sudo mkdir /opt/java-jdk
+sudo mkdir -p /opt/java-jdk
 sudo tar -C /opt/java-jdk -zxf /home/docker/jdk-8u211-linux-x64.tar.gz
 sudo update-alternatives --install /usr/bin/java java /opt/java-jdk/jdk1.8.0_211/bin/java 1
 sudo update-alternatives --install /usr/bin/javac javac /opt/java-jdk/jdk1.8.0_211/bin/javac 1
