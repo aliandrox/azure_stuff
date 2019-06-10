@@ -33,6 +33,14 @@ sudo mkdir -p /opt/boomi/local
 sudo chmod -R 777 /opt/boomi/
 sudo chmod -R 777 /opt/boomi/local
 sudo chmod -R 777 /tmp
+sudo mkdir -p /data 
+sudo mkdir -p /data/boomi 
+sudo mkdir -p /data/files 
+sudo mkdir -p /data/export 
+sudo chmod 777 /data 
+sudo chmod 777 /data/boomi 
+sudo chmod 777 /data/files 
+sudo chmod 777 /data/export
 
 sudo cp /data/jdk-8u211-linux-x64.tar.gz /home/docker/jdk-8u211-linux-x64.tar.gz
 sudo mkdir -p /opt/java-jdk
