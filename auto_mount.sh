@@ -5,8 +5,6 @@
 # $4 = mountpoint path
 # $5 - username
 
-sudo su
-
 if [ -d "/data/boomi" ] && [ -d "/data/export" ] && [ -d "/data/files" ] 
 then
   echo "good"
