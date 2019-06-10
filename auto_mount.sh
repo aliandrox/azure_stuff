@@ -42,8 +42,12 @@ sudo update-alternatives --install /usr/bin/javac javac /opt/java-jdk/jdk1.8.0_2
 
 export INSTALL4J_JAVA_HOME=/opt/java-jdk/jdk1.8.0_211/jre
 sudo rm /home/docker/jdk-8u211-linux-x64.tar.gz
-sudo cp /data/container-launcher.jar /data/boomi/lib/container-launcher.jar
-
+if [ -d "/data/boomi/lib/" ] 
+then
+  echo "good"
+else
+    sudo cp /data/container-launcher.jar /data/boomi/lib/container-launcher.jar
+fi
 sudo bash -c 'echo "fs.file-max = 1048576" >> /etc/sysctl.conf'
 sudo sysctl -p
 
