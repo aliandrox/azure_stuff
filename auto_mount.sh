@@ -5,6 +5,9 @@
 # $4 = mountpoint path
 # $5 - username
 
+sudo bash -c 'echo "fs.file-max = 1048576" >> /etc/sysctl.conf'
+sudo sysctl -p
+
 if [ -d "/data/boomi" ] && [ -d "/data/export" ] && [ -d "/data/files" ] 
 then
   echo "good"
@@ -57,8 +60,6 @@ else
   echo "Boomi not installed, do nothing"
 fi
 
-sudo bash -c 'echo "fs.file-max = 1048576" >> /etc/sysctl.conf'
-sudo sysctl -p
 
 if [ -d "/data/boomi/bin" ] 
 then
