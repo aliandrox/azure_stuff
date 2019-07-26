@@ -65,3 +65,11 @@ then
 else
   echo "Boomi not installed, do nothing"
 fi
+
+sudo su
+sudo echo "fs.file-max = 999999" >> /etc/sysctl.conf
+sudo echo "root - nofile 999999" >> /etc/security/limits.conf
+sudo echo "root soft nofile 999999" >> /etc/security/limits.conf
+sudo echo "root hard nofile 999999" >> /etc/security/limits.conf
+sudo echo "session required pam_limits.so" >> /etc/pam.d/common-session
+sudo sysctl -p
