@@ -61,11 +61,11 @@ else
 fi
 
 
-if [ -d "/data/boomi/bin" ] 
-then
-    sudo /data/boomi/bin/./atom start
-else
-  echo "Boomi not installed, do nothing"
-fi
+#if [ -d "/data/boomi/bin" ] 
+#then
+#    sudo /data/boomi/bin/./atom start
+#else
+#  echo "Boomi not installed, do nothing"
+#fi
 
 
