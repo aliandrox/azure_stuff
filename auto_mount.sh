@@ -69,3 +69,18 @@ fi
 #fi
 
 
+sudo echo  "[Unit]
+Description=Dell Boomi [atomName]
+After=network.target
+RequiresMountsFor=[installDirMountPoint]
+[Service]
+Type=forking
+User=root
+ExecStart=/data/boomi/bin/atom start
+ExecStop=/data/boomi//bin/atom stop
+ExecReload=/data/boomi/bin/atom restart
+[Install]
+WantedBy=multi-user.target" >> /etc/systemd/system/fmg_prod.service
+
+sudo systemctl enable fmg_prod.service
+sudo systemctl start fmg_prod.service
