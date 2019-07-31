@@ -77,8 +77,13 @@ RequiresMountsFor=[installDirMountPoint]
 Type=forking
 User=root
 ExecStart=/data/boomi/bin/atom start
-ExecStop=/data/boomi//bin/atom stop
+ExecStop=/data/boomi/bin/atom stop
 ExecReload=/data/boomi/bin/atom restart
+LimitAS=infinity
+LimitRSS=infinity
+LimitCORE=infinity
+LimitNOFILE=1048576
+Restart=on-failure
 [Install]
 WantedBy=multi-user.target" >> /etc/systemd/system/fmg_prod.service
 
