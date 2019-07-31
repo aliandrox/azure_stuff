@@ -83,7 +83,7 @@ LimitAS=infinity
 LimitRSS=infinity
 LimitCORE=infinity
 LimitNOFILE=3048576
-Restart=on-failure
+Restart=always
 [Install]
 WantedBy=multi-user.target" >> /etc/systemd/system/fmg_prod.service
 
