@@ -82,7 +82,7 @@ ExecReload=/data/boomi/bin/atom restart
 LimitAS=infinity
 LimitRSS=infinity
 LimitCORE=infinity
-LimitNOFILE=1048576
+LimitNOFILE=3048576
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target" >> /etc/systemd/system/fmg_prod.service
