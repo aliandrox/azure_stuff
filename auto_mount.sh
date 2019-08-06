@@ -87,7 +87,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/fmg_prod.service
 
-sudo su systemctl daemon-reload
+sudo systemctl daemon-reload
 sudo systemctl enable fmg_prod.service
-sudo su systemctl daemon-reload
+sudo systemctl daemon-reload
 sudo systemctl start fmg_prod.service
