@@ -90,4 +90,11 @@ WantedBy=multi-user.target" > /etc/systemd/system/fmg_prod.service
 systemctl daemon-reload
 systemctl enable fmg_prod.service
 systemctl daemon-reload
-systemctl start fmg_prod.service
+#only start if we have boomi installed.
+if [ -d "/data/boomi/bin" ] 
+then
+    echo "Boomi not installed, do nothing"
+else
+   systemctl start fmg_prod.service
+fi
+
