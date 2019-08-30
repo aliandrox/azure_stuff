@@ -93,8 +93,8 @@ systemctl daemon-reload
 #only start if we have boomi installed.
 if [ -d "/data/boomi/bin" ] 
 then
-    echo "Boomi not installed, do nothing"
+     systemctl start fmg_prod.service 
 else
-   systemctl start fmg_prod.service
+  echo "Boomi not installed, do nothing"
 fi
 
