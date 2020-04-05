@@ -84,6 +84,10 @@ LimitRSS=infinity
 LimitCORE=infinity
 LimitNOFILE=3048576
 Restart=always
+TimeoutSec=5min
+IgnoreSIGPIPE=no
+KillMode=process
+GuessMainPID=no
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/fmg_prod.service
 
