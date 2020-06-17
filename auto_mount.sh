@@ -44,6 +44,8 @@ sudo chmod 777 /data
 sudo chmod 777 /data/boomi 
 sudo chmod 777 /data/files 
 sudo chmod 777 /data/export
+sudo mkdir -p /tmp/fvrc 
+sudo chmod 777 /tmp/fvrc
 
 sudo cp /data/jdk-8u211-linux-x64.tar.gz /home/docker/jdk-8u211-linux-x64.tar.gz
 sudo mkdir -p /opt/java-jdk
