@@ -27,7 +27,14 @@ fi
 
 sudo chmod 600 /etc/smbcredentials/$1.cred
 
-#sudo bash -c 'echo "//'$1'.file.core.windows.net/'$3' '$4' cifs nofail,vers=3.0,credentials=/etc/smbcredentials/'$1'.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+#added in code to check if the map data command is already in the fstab file
+MAPVALUE="//$1.file.core.windows.net/$3 $4 cifs nofail,vers=3.0,credentials=/etc/smbcredentials/$1.cred,dir_mode=0777,file_mode=0777,serverino" 
+if !( grep //etc/fstab -e "$MAPVALUE" )
+  then
+   sudo echo $MAPVALUE  >> /etc/fstab 
+fi
+
+
 
 sudo mount -a
 
